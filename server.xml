@@ -1,0 +1,41 @@
+<server description="obiwan was8 with adminCenter and javaee-7 ejb-3.2 mdb-2.0 jms-3.2 feature">
+
+    <!-- Enable features -->
+    <featureManager>
+        <feature>adminCenter-1.0</feature>
+        <feature>ejb-3.2</feature>
+        <feature>ejbHome-3.2</feature>
+        <feature>ejbPersistentTimer-3.2</feature>
+        <feature>ejbRemote-3.2</feature>
+        <feature>javaee-7.0</feature>
+		<feature>jaxb-2.2</feature>
+		<feature>jaxws-2.2</feature>
+		<feature>jca-1.7</feature>
+		<feature>jcaInboundSecurity-1.0</feature>
+		<feature>jms-2.0</feature>
+		<feature>jmsMdb-3.2</feature>
+		<feature>mdb-3.2</feature>
+		<feature>wasJmsClient-2.0</feature>
+		<feature>wasJmsSecurity-1.0</feature>
+		<feature>wasJmsServer-1.0</feature>
+		<feature>jdbc-4.1</feature>
+    </featureManager>
+    <basicRegistry id="basic">
+      <user name="admin" password="adminpwd" />
+      <user name="nonadmin" password="nonadminpwd" />
+    </basicRegistry>
+
+   <!-- Assign 'admin' to Administrator -->
+	<administrator-role>
+	  <user>admin</user>
+	</administrator-role>
+
+    <quickStartSecurity userName="admin" userPassword="adminpwd" />
+
+    <!-- Allows remote file access for config changes -->
+	<remoteFileAccess>
+	  <writeDir>${server.config.dir}</writeDir>
+	</remoteFileAccess>
+
+    <httpEndpoint id="defaultHttpEndpoint"  host="*" httpPort="9080" httpsPort="9443"/>
+</server>
