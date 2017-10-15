@@ -1,4 +1,4 @@
-FROM websphere-liberty:javaee7
+FROM ddefrancesco/was855-jre7:webprofile7
 RUN installUtility install adminCenter-1.0 --acceptLicense
 COPY server.xml /config/
 ENV LICENSE accept
